@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct WeatherForecast: Codable {
+    let latitude: Double
+    let longitude: Double
+    let timezone: String
+    let currently: CurrentForecast
+}

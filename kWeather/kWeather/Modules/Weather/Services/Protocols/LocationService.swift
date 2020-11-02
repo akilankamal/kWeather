@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol LocationServiceDelegate: class {
+    func locationService(_ locationService: LocationService, didGetCurrentLocation location: (latitude: String, longitude: String))
+    func locationService(_ locationService: LocationService, didFailToGetCurrentLocation error: Error)
+}
+
+protocol LocationService: class {
+    func setDelegate(delegate: LocationServiceDelegate?)
+    func requestLocation()
+}

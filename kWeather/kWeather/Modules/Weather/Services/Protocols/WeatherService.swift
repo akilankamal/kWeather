@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol WeatherService {
+    func getWeatherForecast(for latitude: String, longitude: String, completion: @escaping (WeatherForecast?, Error?) -> ())
+}
