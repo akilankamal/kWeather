@@ -14,6 +14,15 @@
 		FEC9606B2550663000ED8758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC9606A2550663000ED8758 /* Assets.xcassets */; };
 		FEC9606E2550663000ED8758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC9606C2550663000ED8758 /* LaunchScreen.storyboard */; };
 		FEC960792550663000ED8758 /* kWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960782550663000ED8758 /* kWeatherTests.swift */; };
+		FEC96088255066CE00ED8758 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC96087255066CE00ED8758 /* LocationService.swift */; };
+		FEC9608A255066DB00ED8758 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC96089255066DB00ED8758 /* WeatherService.swift */; };
+		FEC9608C2550670900ED8758 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9608B2550670900ED8758 /* CoreLocationService.swift */; };
+		FEC9608E2550671A00ED8758 /* DarkSkyWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9608D2550671A00ED8758 /* DarkSkyWeatherService.swift */; };
+		FEC960912550674200ED8758 /* NetworkLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960902550674200ED8758 /* NetworkLibrary.swift */; };
+		FEC960952550679000ED8758 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960942550679000ED8758 /* Endpoint.swift */; };
+		FEC96097255067A600ED8758 /* DarkSkyEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC96096255067A600ED8758 /* DarkSkyEndpoint.swift */; };
+		FEC9609A255067D600ED8758 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC96099255067D600ED8758 /* WeatherForecast.swift */; };
+		FEC9609C255067F300ED8758 /* CurrentForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9609B255067F300ED8758 /* CurrentForecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +47,15 @@
 		FEC960742550663000ED8758 /* kWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC960782550663000ED8758 /* kWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kWeatherTests.swift; sourceTree = "<group>"; };
 		FEC9607A2550663000ED8758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC96087255066CE00ED8758 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		FEC96089255066DB00ED8758 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		FEC9608B2550670900ED8758 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
+		FEC9608D2550671A00ED8758 /* DarkSkyWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherService.swift; sourceTree = "<group>"; };
+		FEC960902550674200ED8758 /* NetworkLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLibrary.swift; sourceTree = "<group>"; };
+		FEC960942550679000ED8758 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FEC96096255067A600ED8758 /* DarkSkyEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyEndpoint.swift; sourceTree = "<group>"; };
+		FEC96099255067D600ED8758 /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		FEC9609B255067F300ED8758 /* CurrentForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentForecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +99,7 @@
 			children = (
 				FEC960612550662D00ED8758 /* AppDelegate.swift */,
 				FEC960632550662D00ED8758 /* SceneDelegate.swift */,
+				FEC960832550669700ED8758 /* Modules */,
 				FEC960652550662D00ED8758 /* ViewController.swift */,
 				FEC960672550662D00ED8758 /* Main.storyboard */,
 				FEC9606A2550663000ED8758 /* Assets.xcassets */,
@@ -97,6 +116,134 @@
 				FEC9607A2550663000ED8758 /* Info.plist */,
 			);
 			path = kWeatherTests;
+			sourceTree = "<group>";
+		};
+		FEC960832550669700ED8758 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FEC96084255066AD00ED8758 /* Weather */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FEC96084255066AD00ED8758 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FEC96085255066B300ED8758 /* Services */,
+				FEC9608F2550673100ED8758 /* Network */,
+				FEC96098255067BF00ED8758 /* Models */,
+				FEC9609D2550680D00ED8758 /* UserInterface */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		FEC96085255066B300ED8758 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FEC96086255066BF00ED8758 /* Protocols */,
+				FEC9608B2550670900ED8758 /* CoreLocationService.swift */,
+				FEC9608D2550671A00ED8758 /* DarkSkyWeatherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FEC96086255066BF00ED8758 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FEC96087255066CE00ED8758 /* LocationService.swift */,
+				FEC96089255066DB00ED8758 /* WeatherService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FEC9608F2550673100ED8758 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FEC960902550674200ED8758 /* NetworkLibrary.swift */,
+				FEC960922550677A00ED8758 /* Endpoints */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FEC960922550677A00ED8758 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				FEC960932550678200ED8758 /* Protocols */,
+				FEC96096255067A600ED8758 /* DarkSkyEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		FEC960932550678200ED8758 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FEC960942550679000ED8758 /* Endpoint.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FEC96098255067BF00ED8758 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEC96099255067D600ED8758 /* WeatherForecast.swift */,
+				FEC9609B255067F300ED8758 /* CurrentForecast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FEC9609D2550680D00ED8758 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				FEC9609E2550683C00ED8758 /* Protocols */,
+				FEC9609F2550684300ED8758 /* View */,
+				FEC960A02550684C00ED8758 /* Presenter */,
+				FEC960A12550686500ED8758 /* Interactor */,
+				FEC960A22550688000ED8758 /* Router */,
+				FEC960A32550688A00ED8758 /* Configurator */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		FEC9609E2550683C00ED8758 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FEC9609F2550684300ED8758 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC960A02550684C00ED8758 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FEC960A12550686500ED8758 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FEC960A22550688000ED8758 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FEC960A32550688A00ED8758 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +347,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC9608A255066DB00ED8758 /* WeatherService.swift in Sources */,
+				FEC960952550679000ED8758 /* Endpoint.swift in Sources */,
+				FEC96097255067A600ED8758 /* DarkSkyEndpoint.swift in Sources */,
+				FEC9608E2550671A00ED8758 /* DarkSkyWeatherService.swift in Sources */,
 				FEC960662550662D00ED8758 /* ViewController.swift in Sources */,
 				FEC960622550662D00ED8758 /* AppDelegate.swift in Sources */,
+				FEC9608C2550670900ED8758 /* CoreLocationService.swift in Sources */,
+				FEC96088255066CE00ED8758 /* LocationService.swift in Sources */,
+				FEC960912550674200ED8758 /* NetworkLibrary.swift in Sources */,
+				FEC9609A255067D600ED8758 /* WeatherForecast.swift in Sources */,
+				FEC9609C255067F300ED8758 /* CurrentForecast.swift in Sources */,
 				FEC960642550662D00ED8758 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
