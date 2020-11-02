@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        DarkSkyWeatherService().getWeatherForecast(for: "0", longitude: "0") { (forecast, error) in
+            print(forecast)
+        }
     }
 
 
