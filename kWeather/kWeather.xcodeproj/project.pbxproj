@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FEC960622550662D00ED8758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960612550662D00ED8758 /* AppDelegate.swift */; };
 		FEC960642550662D00ED8758 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960632550662D00ED8758 /* SceneDelegate.swift */; };
-		FEC960662550662D00ED8758 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960652550662D00ED8758 /* ViewController.swift */; };
+		FEC960662550662D00ED8758 /* WeatherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960652550662D00ED8758 /* WeatherHomeViewController.swift */; };
 		FEC960692550662D00ED8758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC960672550662D00ED8758 /* Main.storyboard */; };
 		FEC9606B2550663000ED8758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC9606A2550663000ED8758 /* Assets.xcassets */; };
 		FEC9606E2550663000ED8758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC9606C2550663000ED8758 /* LaunchScreen.storyboard */; };
@@ -28,6 +28,16 @@
 		FEC960AA255069FC00ED8758 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC96089255066DB00ED8758 /* WeatherService.swift */; };
 		FEC960AB25506A4800ED8758 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC96099255067D600ED8758 /* WeatherForecast.swift */; };
 		FEC960AC25506A4800ED8758 /* CurrentForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9609B255067F300ED8758 /* CurrentForecast.swift */; };
+		FEC960AE255075B200ED8758 /* WeatherHomePresenterToViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960AD255075B200ED8758 /* WeatherHomePresenterToViewProtocol.swift */; };
+		FEC960B0255075C200ED8758 /* WeatherHomeViewToPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960AF255075C200ED8758 /* WeatherHomeViewToPresenterProtocol.swift */; };
+		FEC960B2255075CF00ED8758 /* WeatherHomePresenterToRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960B1255075CF00ED8758 /* WeatherHomePresenterToRouterProtocol.swift */; };
+		FEC960B4255075DC00ED8758 /* WeatherHomePresenterToInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960B3255075DC00ED8758 /* WeatherHomePresenterToInteractorProtocol.swift */; };
+		FEC960B6255075EA00ED8758 /* WeatherHomeInteractorToPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960B5255075EA00ED8758 /* WeatherHomeInteractorToPresenterProtocol.swift */; };
+		FEC960B8255075F600ED8758 /* WeatherHomeConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960B7255075F600ED8758 /* WeatherHomeConfigurable.swift */; };
+		FEC960BA2550769600ED8758 /* WeatherHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960B92550769600ED8758 /* WeatherHomePresenter.swift */; };
+		FEC960BC255076AA00ED8758 /* WeatherHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960BB255076AA00ED8758 /* WeatherHomeInteractor.swift */; };
+		FEC960BE255076B800ED8758 /* WeatherHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960BD255076B800ED8758 /* WeatherHomeRouter.swift */; };
+		FEC960C0255076C700ED8758 /* WeatherHomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC960BF255076C700ED8758 /* WeatherHomeConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +54,7 @@
 		FEC9605E2550662D00ED8758 /* kWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC960612550662D00ED8758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC960632550662D00ED8758 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FEC960652550662D00ED8758 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FEC960652550662D00ED8758 /* WeatherHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeViewController.swift; sourceTree = "<group>"; };
 		FEC960682550662D00ED8758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEC9606A2550663000ED8758 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC9606D2550663000ED8758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +73,16 @@
 		FEC9609B255067F300ED8758 /* CurrentForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentForecast.swift; sourceTree = "<group>"; };
 		FEC960A62550697000ED8758 /* MockWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherService.swift; sourceTree = "<group>"; };
 		FEC960A8255069BF00ED8758 /* DarkSkyResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DarkSkyResponse.json; path = ../../../../DarkSkyResponse.json; sourceTree = "<group>"; };
+		FEC960AD255075B200ED8758 /* WeatherHomePresenterToViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomePresenterToViewProtocol.swift; sourceTree = "<group>"; };
+		FEC960AF255075C200ED8758 /* WeatherHomeViewToPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeViewToPresenterProtocol.swift; sourceTree = "<group>"; };
+		FEC960B1255075CF00ED8758 /* WeatherHomePresenterToRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomePresenterToRouterProtocol.swift; sourceTree = "<group>"; };
+		FEC960B3255075DC00ED8758 /* WeatherHomePresenterToInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomePresenterToInteractorProtocol.swift; sourceTree = "<group>"; };
+		FEC960B5255075EA00ED8758 /* WeatherHomeInteractorToPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeInteractorToPresenterProtocol.swift; sourceTree = "<group>"; };
+		FEC960B7255075F600ED8758 /* WeatherHomeConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeConfigurable.swift; sourceTree = "<group>"; };
+		FEC960B92550769600ED8758 /* WeatherHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomePresenter.swift; sourceTree = "<group>"; };
+		FEC960BB255076AA00ED8758 /* WeatherHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeInteractor.swift; sourceTree = "<group>"; };
+		FEC960BD255076B800ED8758 /* WeatherHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeRouter.swift; sourceTree = "<group>"; };
+		FEC960BF255076C700ED8758 /* WeatherHomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +127,6 @@
 				FEC960612550662D00ED8758 /* AppDelegate.swift */,
 				FEC960632550662D00ED8758 /* SceneDelegate.swift */,
 				FEC960832550669700ED8758 /* Modules */,
-				FEC960652550662D00ED8758 /* ViewController.swift */,
 				FEC960672550662D00ED8758 /* Main.storyboard */,
 				FEC9606A2550663000ED8758 /* Assets.xcassets */,
 				FEC9606C2550663000ED8758 /* LaunchScreen.storyboard */,
@@ -216,6 +235,12 @@
 		FEC9609E2550683C00ED8758 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				FEC960AD255075B200ED8758 /* WeatherHomePresenterToViewProtocol.swift */,
+				FEC960AF255075C200ED8758 /* WeatherHomeViewToPresenterProtocol.swift */,
+				FEC960B1255075CF00ED8758 /* WeatherHomePresenterToRouterProtocol.swift */,
+				FEC960B3255075DC00ED8758 /* WeatherHomePresenterToInteractorProtocol.swift */,
+				FEC960B5255075EA00ED8758 /* WeatherHomeInteractorToPresenterProtocol.swift */,
+				FEC960B7255075F600ED8758 /* WeatherHomeConfigurable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -223,6 +248,7 @@
 		FEC9609F2550684300ED8758 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEC960652550662D00ED8758 /* WeatherHomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +256,7 @@
 		FEC960A02550684C00ED8758 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				FEC960B92550769600ED8758 /* WeatherHomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -237,6 +264,7 @@
 		FEC960A12550686500ED8758 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				FEC960BB255076AA00ED8758 /* WeatherHomeInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -244,6 +272,7 @@
 		FEC960A22550688000ED8758 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				FEC960BD255076B800ED8758 /* WeatherHomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -251,6 +280,7 @@
 		FEC960A32550688A00ED8758 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				FEC960BF255076C700ED8758 /* WeatherHomeConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -357,15 +387,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC960AE255075B200ED8758 /* WeatherHomePresenterToViewProtocol.swift in Sources */,
 				FEC9608A255066DB00ED8758 /* WeatherService.swift in Sources */,
+				FEC960B2255075CF00ED8758 /* WeatherHomePresenterToRouterProtocol.swift in Sources */,
 				FEC960952550679000ED8758 /* Endpoint.swift in Sources */,
+				FEC960C0255076C700ED8758 /* WeatherHomeConfigurator.swift in Sources */,
+				FEC960B8255075F600ED8758 /* WeatherHomeConfigurable.swift in Sources */,
 				FEC96097255067A600ED8758 /* DarkSkyEndpoint.swift in Sources */,
 				FEC9608E2550671A00ED8758 /* DarkSkyWeatherService.swift in Sources */,
-				FEC960662550662D00ED8758 /* ViewController.swift in Sources */,
+				FEC960662550662D00ED8758 /* WeatherHomeViewController.swift in Sources */,
 				FEC960622550662D00ED8758 /* AppDelegate.swift in Sources */,
 				FEC9608C2550670900ED8758 /* CoreLocationService.swift in Sources */,
 				FEC96088255066CE00ED8758 /* LocationService.swift in Sources */,
+				FEC960B4255075DC00ED8758 /* WeatherHomePresenterToInteractorProtocol.swift in Sources */,
 				FEC960912550674200ED8758 /* NetworkLibrary.swift in Sources */,
+				FEC960BE255076B800ED8758 /* WeatherHomeRouter.swift in Sources */,
+				FEC960B0255075C200ED8758 /* WeatherHomeViewToPresenterProtocol.swift in Sources */,
+				FEC960BC255076AA00ED8758 /* WeatherHomeInteractor.swift in Sources */,
+				FEC960B6255075EA00ED8758 /* WeatherHomeInteractorToPresenterProtocol.swift in Sources */,
+				FEC960BA2550769600ED8758 /* WeatherHomePresenter.swift in Sources */,
 				FEC9609A255067D600ED8758 /* WeatherForecast.swift in Sources */,
 				FEC9609C255067F300ED8758 /* CurrentForecast.swift in Sources */,
 				FEC960642550662D00ED8758 /* SceneDelegate.swift in Sources */,
