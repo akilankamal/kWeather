@@ -37,6 +37,6 @@ extension WeatherHomePresenter: WeatherHomeInteractorToPresenterProtocol {
     }
     
     func didFailToReceiveForecast() {
-        // Update vire for failure
+        view?.presentError()
     }
 }

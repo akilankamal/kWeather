@@ -161,6 +161,7 @@
 				FEC9608F2550673100ED8758 /* Network */,
 				FEC96098255067BF00ED8758 /* Models */,
 				FEC9609D2550680D00ED8758 /* UserInterface */,
+				FEC960C125507A4E00ED8758 /* Resources */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -283,6 +284,13 @@
 				FEC960BF255076C700ED8758 /* WeatherHomeConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		FEC960C125507A4E00ED8758 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

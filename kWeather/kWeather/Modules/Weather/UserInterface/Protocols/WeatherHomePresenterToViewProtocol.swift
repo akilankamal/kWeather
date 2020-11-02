@@ -11,4 +11,5 @@ import Foundation
 protocol WeatherHomePresenterToViewProtocol: class {
     func setPresenter(presenter: WeatherHomeViewToPresenterProtocol)
     func updateViewFor(forecast: WeatherForecast)
+    func presentError()
 }

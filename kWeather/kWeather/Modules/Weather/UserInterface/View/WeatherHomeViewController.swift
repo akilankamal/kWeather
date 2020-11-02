@@ -12,8 +12,43 @@ class WeatherHomeViewController: UIViewController {
     
     private var presenter: WeatherHomeViewToPresenterProtocol?
     
+    private var activityView: UIActivityIndicatorView?
+    
+    @IBOutlet private weak var icon: UIImageView!
+    @IBOutlet private weak var timezoneLabel: UILabel!
+    @IBOutlet private weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var summaryLabel: UILabel!
+    @IBOutlet private weak var feelsLikeLabel: UILabel!
+    @IBOutlet private weak var windSpeedLabel: UILabel!
+    @IBOutlet private weak var humidityLabel: UILabel!
+    @IBOutlet private weak var dewPtLabel: UILabel!
+    @IBOutlet private weak var uvIndexLabel: UILabel!
+    @IBOutlet private weak var visibilityLabel: UILabel!
+    @IBOutlet private weak var pressureLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        showActivityIndicator()
+    }
+    
+    @IBAction func didSelectCurrentLocation(_ sender: UIButton) {
+        showActivityIndicator()
+        presenter?.getWeatherForecastForCurrentLocation()
+    }
+    
+    private func showActivityIndicator() {
+        activityView = UIActivityIndicatorView(style: .large)
+        activityView?.center = self.view.center
+        self.view.isUserInteractionEnabled = false
+        self.view.addSubview(activityView!)
+        activityView?.startAnimating()
+    }
+
+    private func hideActivityIndicator(){
+        if (activityView != nil){
+            self.view.isUserInteractionEnabled = true
+            activityView?.stopAnimating()
+        }
     }
 }
 
@@ -23,7 +58,26 @@ extension WeatherHomeViewController: WeatherHomePresenterToViewProtocol {
     }
     
     func updateViewFor(forecast: WeatherForecast) {
-        print(forecast.timezone)
+        hideActivityIndicator()
+        icon.image = UIImage(named: forecast.currently.icon)
+        timezoneLabel.text = forecast.timezone
+        temperatureLabel.text = String(forecast.currently.temperature) + "˚"
+        summaryLabel.text = forecast.currently.summary + "."
+        feelsLikeLabel.text = String(forecast.currently.apparentTemperature) + "˚"
+        windSpeedLabel.text = String(forecast.currently.windSpeed) + " mph"
+        humidityLabel.text = String(forecast.currently.humidity) + "%"
+        dewPtLabel.text = String(forecast.currently.dewPoint) + "˚"
+        uvIndexLabel.text = String(forecast.currently.uvIndex)
+        visibilityLabel.text = String(forecast.currently.visibility) + "+ mi"
+        pressureLabel.text = String(forecast.currently.pressure) + " mb"
+    }
+    
+    func presentError() {
+        hideActivityIndicator()
+        let alert = UIAlertController(title: "Error", message: "There is a problem in getting data. Try after sometime.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
