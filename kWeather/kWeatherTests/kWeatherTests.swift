@@ -26,17 +26,28 @@ class kWeatherTests: XCTestCase {
     }
 
     func testMockWeatherServiceForValidCoordinates() throws {
-        mockWeatherService.getWeatherForecast(for: "59.337239", longitude: "18.062381") { [weak self] (forecast, error) in
-            guard let weakSelf = self, let actualLatitude = forecast?.latitude, let actualLongitude = forecast?.longitude else {
+        mockWeatherService.getWeatherForecast(for: "59.337239", longitude: "18.062381") { (forecast, error) in
+            guard let actualLatitude = forecast?.latitude,
+                let actualLongitude = forecast?.longitude,
+                let actualTemperature = forecast?.currently.temperature else {
                 XCTFail()
                 return
             }
             
             let expectedLatitude = "59.337239"
             let expectedLongitude = "18.062381"
+            let expectedTemperature = 44.47
             
             XCTAssertTrue(expectedLatitude == String(actualLatitude))
             XCTAssertTrue(expectedLongitude == String(actualLongitude))
+            XCTAssertTrue(expectedTemperature == actualTemperature)
+        }
+    }
+    
+    func testMockWeatherServiceForInvalidCoordinates() throws {
+        mockWeatherService.getWeatherForecast(for: "xxx", longitude: "yyy") { (forecast, error) in
+            XCTAssert(forecast == nil)
+            XCTAssert(error != nil)
         }
     }
 }

@@ -38,15 +38,25 @@ extension WeatherHomeInteractor: LocationServiceDelegate {
         weatherService?.getWeatherForecast(for: location.latitude,
                                            longitude: location.longitude,
                                            completion: { [weak self] (forecast, error) in
-                                            guard let weakSelf = self, let forecast = forecast else {
-                                                // Handle
+                                            
+                                            guard let weakSelf = self else {
                                                 return
                                             }
+                                            
+                                            // Notify Presenter with failure for no / corrupted response
+                                            guard let forecast = forecast else {
+                                                weakSelf.presenter?.didFailToReceiveForecast()
+                                                return
+                                            }
+                                            
+                                            // Notify Presenter on successful reception of response
                                             weakSelf.presenter?.didReceive(forecast: forecast)
         })
     }
     
     func locationService(_ locationService: LocationService, didFailToGetCurrentLocation error: Error) {
+        
+        // Notify Presenter with failure 
         presenter?.didFailToReceiveForecast()
     }
 }

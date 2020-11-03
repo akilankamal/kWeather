@@ -9,14 +9,21 @@
 import Foundation
 
 class DarkSkyWeatherService: WeatherService {
-        
+    
     func getWeatherForecast(for latitude: String, longitude: String, completion: @escaping (WeatherForecast?, Error?) -> ()) {
-        NetworkLibrary.request(endPoint: DarkSkyEndPoint.getWeatherForecast(latitude: latitude, longitude: longitude)) { (result: Result<WeatherForecast, Error>) in
+        
+        NetworkLibrary.request(endPoint: DarkSkyEndPoint.getWeatherForecast(
+            latitude: latitude,
+            longitude: longitude)) { (result: Result<WeatherForecast, Error>) in
+                
             switch result {
+                
+            // Success
             case .success(let response):
                 print("Response: ", response)
                 completion(response, nil)
                 
+            // Failure
             case .failure(let error):
                 print(error)
                 completion(nil, error)

@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
+        // Configure rootViewController
         WeatherHomeConfigurator.configure(view: rootViewController)
     }
 

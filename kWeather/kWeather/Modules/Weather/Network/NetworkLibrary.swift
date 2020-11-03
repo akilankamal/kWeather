@@ -9,6 +9,7 @@
 import Foundation
 
 class NetworkLibrary {
+    
     class func request<T: Codable> (endPoint: EndPoint, completion: @escaping(Result<T, Error>) -> ()) {
         
         var components = URLComponents()

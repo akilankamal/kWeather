@@ -9,6 +9,20 @@
 import Foundation
 
 protocol WeatherHomeInteractorToPresenterProtocol: class {
+    
+    /*
+    *  didReceive forecast
+    *
+    *  Discussion:
+    *      Function to inform Presenter with the obtained forecast.
+    */
     func didReceive(forecast:WeatherForecast)
+    
+    /*
+    *  didFailToReceiveForecast
+    *
+    *  Discussion:
+    *      Function to inform Presenter about failure in obtaining forecast.
+    */
     func didFailToReceiveForecast()
 }

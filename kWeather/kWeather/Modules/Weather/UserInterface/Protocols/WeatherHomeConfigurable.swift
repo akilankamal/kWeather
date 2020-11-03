@@ -9,5 +9,12 @@
 import Foundation
 
 protocol WeatherHomeConfigurable: class {
+    
+    /*
+    *  configure view
+    *
+    *  Discussion:
+    *      Configure View with its VIPER dependencies.
+    */
     static func configure(view: WeatherHomePresenterToViewProtocol)
 }

@@ -9,5 +9,12 @@
 import Foundation
 
 protocol WeatherService {
+    
+    /*
+    *  getWeatherForecast
+    *
+    *  Discussion:
+    *      Get weather forecast for the given latitude and longitude
+    */
     func getWeatherForecast(for latitude: String, longitude: String, completion: @escaping (WeatherForecast?, Error?) -> ())
 }

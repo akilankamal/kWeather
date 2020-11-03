@@ -28,9 +28,13 @@ class WeatherHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Show progress as LocationService attempts to get location information
+        // and forecast information on app launch
         showActivityIndicator()
     }
     
+    // Button action to get weather forecast for the current location
     @IBAction func didSelectCurrentLocation(_ sender: UIButton) {
         showActivityIndicator()
         presenter?.getWeatherForecastForCurrentLocation()
@@ -74,7 +78,7 @@ extension WeatherHomeViewController: WeatherHomePresenterToViewProtocol {
     
     func presentError() {
         hideActivityIndicator()
-        let alert = UIAlertController(title: "Error", message: "There is a problem in getting data. Try after sometime.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Error", message: "Problem occured in getting data. Try after sometime.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
 
         self.present(alert, animated: true, completion: nil)

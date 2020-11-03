@@ -9,5 +9,6 @@
 import Foundation
 
 protocol WeatherHomePresenterToRouterProtocol: class {
-    
+    // Router is empty
+    // No implementation as there is no navigation in the app
 }
